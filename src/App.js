@@ -1,15 +1,38 @@
 import React, { Component } from "react";
 import {hot} from "react-hot-loader";
-import "./App.css";
+import withStyles from 'react-jss'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Home from "./Home";
+import About from "./About";
+import Nav from "./Nav";
+// import "./App.css";
+
+const styles = {
+	wrapp: {
+		color: 'blue',
+	}
+}
 
 class App extends Component {
+	constructor(props){
+		super(props);
+	}
 	render() {
 		return(
-			<div className="App">
-				<h1>Hello World</h1>
+			<div >
+					<Nav />
+					<hr/>
+					<Route exact path="/" component={Home} />
+		      <Route exact path="/about" component={About}  />
 			</div>
 		);
 	}
 }
 
-export default hot(module)(App);
+export default withStyles(styles)(App);
