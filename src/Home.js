@@ -7,9 +7,7 @@ import {
   Link
 } from "react-router-dom";
 
-const styles = {
-
-}
+const styles = {}
 
 class Home extends Component {
 	constructor(props){
