@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackRootPlugin = require('html-webpack-root-plugin');
 
 module.exports = {
     entry: "./src/index.js",
@@ -22,7 +23,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist/"),
-        publicPath: "/dist/",
+        publicPath: "./",
         filename: "bundle.js"
     },
     devServer: {
@@ -37,7 +38,8 @@ module.exports = {
         open: true, // Open the page in browser on strat script
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new HtmlWebpackPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin(),
+        new HtmlWebpackRootPlugin()
     ]
 };
