@@ -7,18 +7,21 @@ import {
   Link
 } from "react-router-dom";
 
+
 const styles = {}
 
 class About extends Component {
 	constructor(props){
 		super(props);
+		console.log(this.props)
 	}
 	render() {
 		const { match } = this.props;
-		const { params } = match;
+		// const { params } = match;
+		console.log(this.props)
 		return(
 			<div >
-				<h1>About  { params && params.id ? "#"+params.id : "" } </h1>
+				<h1>About  </h1>
 			</div>
 		);
 	}

@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import {PrivateRoute} from "./PrivateRoute";
 import Home from "./Home";
 import About from "./About";
 import Nav from "./Nav";
@@ -29,8 +29,8 @@ class App extends Component {
 				<Nav />
 
 				<Route exact path="/" component={Home} />
-		      	<Route exact path="/about" component={About}  />
-		      	<Route exact path="/about/:id" component={About}  />
+		      	<PrivateRoute exact path="/about" component={About}  />
+		      	<PrivateRoute exact path="/about/:id" component={About}  />
 			</div>
 		);
 	}
